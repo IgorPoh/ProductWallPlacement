@@ -28,16 +28,10 @@ namespace WallFitter
             }
         }
 
-
-        private void OnValidate()
-        {
-
-            if (ResetController == null)
-                ResetController = GameObject.FindObjectOfType<ResetController>();
-        }
         protected void Start()
         {
-
+            if (ResetController == null)
+                ResetController = GameObject.FindObjectOfType<ResetController>();
             SetDefaultState();
 
             ResetController.OnReset += SetDefaultState;

@@ -21,7 +21,8 @@ namespace WallFitter
         [SerializeField]
         ResetController ResetController;
 
-        private void OnValidate()
+        // Start is called before the first frame update
+        void Start()
         {
             if (SelectionController == null)
                 SelectionController = FindObjectOfType<SelectionController>();
@@ -31,11 +32,6 @@ namespace WallFitter
 
             if (StateManagerUI == null)
                 StateManagerUI = FindObjectOfType<StateManagerUI>();
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
             SelectionState();
 
             ResetController.OnReset += SelectionState;

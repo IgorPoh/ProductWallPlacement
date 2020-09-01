@@ -11,7 +11,7 @@ namespace WallFitter
 
         public event Action OnReset;
 
-        private void OnValidate()
+        private void Start()
         {
 
             if (StateManagerUI == null)
